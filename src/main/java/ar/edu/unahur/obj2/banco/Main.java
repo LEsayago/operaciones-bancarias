@@ -24,10 +24,10 @@ public class Main {
         System.out.println("Saldo: " + cuenta.getSaldo());
 
         /*
-         * Ejecucion en Lote
-retira 5000
-deposita 300000
-retira 50000
+        Ejecucion en Lote
+        retira 5000
+        deposita 300000
+        retira 50000
          */
         System.out.println("\nEjecucion en Lote");
         System.out.println("Saldo: " + cuenta.getSaldo());
