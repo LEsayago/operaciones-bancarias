@@ -1,11 +1,16 @@
 package ar.edu.unahur.obj2.banco;
 
 import ar.edu.unahur.obj2.banco.Comandos.*;
+import ar.edu.unahur.obj2.banco.observer.Auditoria;
+import ar.edu.unahur.obj2.banco.observer.NotificacionCliente;
 
 public class Main {
     public static void main(String[] args) {
         
         Cuenta cuenta = new Cuenta(1234, 10000.0);
+        cuenta.agregarObservador(new NotificacionCliente());
+        cuenta.agregarObservador(new Auditoria());
+        
         Invoker invoker = new Invoker();
         IComando depositar = new DepositarCommand(cuenta, 70000.0);
         IComando retirar = new RetirarCommand(cuenta, 5000.0);
